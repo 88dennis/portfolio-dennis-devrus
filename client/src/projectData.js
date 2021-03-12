@@ -63,17 +63,18 @@ const dmsProjects = {
     ],
 
 projects:[
-  // {
-  //   _id: 1,
-  //   name: "UO Financial App",
-  //   image: "https://i.imgur.com/JwTGPPG.png",
-  //   gitimage: "https://i.imgur.com/5uRJvFm.png",
-  //   gitHubLink: "https://github.com/88dennis/Project-2",
-  //   projectInfo: "UO is an app for people who need to keep track of the money they have lent and borrowed from friends and family",
-  //   projectLink: "https://sleepy-meadow-86979.herokuapp.com/"
-    
-  // },
   {
+    _id: 1,
+    name: "Bucklet App",
+    image: "https://i.imgur.com/fRK2ooL.jpg",
+    gitimage: "https://i.imgur.com/5uRJvFm.png",
+    gitHubLink: "https://github.com/88dennis/sarmsdev-mern-bucklet",
+    projectInfo: "Keeps track of your income and expenses. A CRUD app that uses MERN Stack",
+    projectLink: "https://buckletapp.herokuapp.com/"
+    
+  },
+  {
+
     _id: 2,
     name: "Tannin",
     image: "https://i.imgur.com/gId2KuI.png",
