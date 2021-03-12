@@ -1,0 +1,38 @@
+{
+  "name": "portfolio-dennis-sarmiento-mern-dev",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "14.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "client": "cd client && npm run start",
+    "server": "nodemon index.js --ignore client/",
+    "client-install": "cd client && npm install",
+    "server-install": "npm install",
+    "install-all": "concurrently \"npm run client-install\" \"npm run server-install\"",
+    "dev": "concurrently -n 'server,client' -c 'red,green' \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/88dennis/portfolio-dennis-mern-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/88dennis/portfolio-dennis-mern-dev/issues"
+  },
+  "homepage": "https://github.com/88dennis/portfolio-dennis-mern-dev#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "concurrently": "^6.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.19"
+  }
+}
