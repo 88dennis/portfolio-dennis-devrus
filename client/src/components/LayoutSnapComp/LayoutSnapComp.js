@@ -341,7 +341,7 @@ setState(
 
           <ProjectsComp 
           sectionName = "Templates - No templates added yet"
-          // projectData={projectData ? projectData.projects : []}
+          projectData={projectData ? projectData.templates : []}
           projectBtnHandler={projectBtnHandler}
           />
         </div>

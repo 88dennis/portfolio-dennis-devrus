@@ -1,3 +1,5 @@
+
+
 const dmsProjects = {
 
 
@@ -6,7 +8,7 @@ const dmsProjects = {
     games: [
 
       {
-        _id: 13,
+        _id: 1,
         name: "Hangman",
         image: "https://i.imgur.com/QMfYzAc.png",
         projectInfo: "A classic game which player one enters a word for the player two to guess",
@@ -15,7 +17,7 @@ const dmsProjects = {
         projectLink: "https://88dennis.github.io/hangman/"
       },
       {
-        _id: 14,
+        _id: 2,
         name: "Click Game",
         image: "https://i.imgur.com/u7IzDgU.png",
         projectInfo: "The goal of the game is to only click each character once, with the highest possible score being 12. Every time you make a guess, the characters will reshuffle themselves",
@@ -24,7 +26,7 @@ const dmsProjects = {
         projectLink: "https://88dennis.github.io/click-game/"
       },
       {
-        _id: 15,
+        _id: 3,
         name: "Color Game",
         image: "https://i.imgur.com/BaipmdO.png",
         projectInfo: "A web app that will help you familiarize with RGB Colors while having fun.",
@@ -52,7 +54,7 @@ const dmsProjects = {
       //   projectLink: "hhttps://88dennis.github.io/unit-4-game/"
       // },
       {
-        _id: 18,
+        _id: 4,
         name: "Psychic Game",
         image: "https://i.imgur.com/YQr1qM6.jpg",
         projectInfo: "Guessing Game - If the user’s number matches the computer’s number, display text informing them that they've won in the 'Result' Card. Otherwise, display text informing them that they've lost.",
@@ -64,7 +66,7 @@ const dmsProjects = {
 
 projects:[
   {
-    _id: 1,
+    _id: 5,
     name: "Bucklet App",
     image: "https://i.imgur.com/fRK2ooL.jpg",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
@@ -74,17 +76,17 @@ projects:[
     
   },
   {
-
-    _id: 2,
+    _id: 6,
     name: "Tannin",
     image: "https://i.imgur.com/gId2KuI.png",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
-    gitHubLink: "https://github.com/88dennis/tannin-app-client",
+    gitHubLink: "https://github.com/88dennis/tannin-app-final",
     projectInfo: "Tannin is a react app designed to help restaurant management educate and test their staff on wine knowledge for their current wine list. Wine is a detailed and nuanced subject that requires attention and practice to learn. Restaurants are a fast paced, hectic work environment that require a lot of quick thinking and physical labor. Tannin is designed to make studying wine as easy as possible for employees and just as easy for management to track.",
     projectLink: "https://tanninwineapp.herokuapp.com/"
+    
   },
   {
-    _id: 3,
+    _id: 7,
     name: "Seek - Matching App",
     image: "https://i.imgur.com/koQZYXh.png",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
@@ -93,7 +95,7 @@ projects:[
     projectLink: "https://boiling-badlands-34403.herokuapp.com/"
   },
   {
-    _id: 4,
+    _id: 8,
     name: "Melos",
     image: "https://i.imgur.com/mvNOCOX.jpg",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
@@ -102,7 +104,7 @@ projects:[
     projectLink: "https://88dennis.github.io/Project-1/"
   },
   {
-    _id: 5,
+    _id: 9,
     name: "Blog - Scraper App",
     image: "https://i.imgur.com/luaR8s5.png",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
@@ -111,7 +113,7 @@ projects:[
     projectLink: "https://thawing-coast-96483.herokuapp.com/ "
   },
   {
-    _id: 6,
+    _id: 10,
     name: "Fat Biggies Burger",
     image: "https://i.imgur.com/MMaXXSB.png",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
@@ -120,7 +122,7 @@ projects:[
     projectLink: "https://pure-tundra-68960.herokuapp.com/"
   },
   {
-    _id: 7,
+    _id: 11,
     name: "Train Scheduler",
     image: "https://i.imgur.com/CrZGXZo.jpg",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
@@ -129,7 +131,7 @@ projects:[
     projectLink: "https://88dennis.github.io/Train-Scheduler/"
   },
   {
-    _id: 8,
+    _id: 12,
     name: "To-Do-App",
     image: "https://i.imgur.com/9pjMIPE.jpg",
     projectInfo: "A simple to-do-list app",
@@ -139,7 +141,7 @@ projects:[
     
   },
   {
-    _id: 9,
+    _id: 13,
     name: "GIFS - Giphy Collector",
     image: "https://i.imgur.com/DLpgYwb.jpg",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
@@ -148,7 +150,7 @@ projects:[
     projectLink: "https://88dennis.github.io/GIFS/"
   },
   {
-    _id: 10,
+    _id: 14,
     name: "Bamazon",
     image: "https://i.imgur.com/pLHtA7q.jpg",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
@@ -157,7 +159,7 @@ projects:[
     projectLink: "https://88dennis.github.io/Bamazon/"
   },
   {
-    _id: 11,
+    _id: 15,
     name: "Liri Node App",
     image: "https://i.imgur.com/ZCBnh9a.png",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
@@ -166,7 +168,7 @@ projects:[
     projectLink: "https://88dennis.github.io/liri-node-app/"
   },
   {
-    _id: 12,
+    _id: 16,
     name: "Color Picker",
     image: "https://i.imgur.com/8Vvk8Iv.jpg",
     gitimage: "https://i.imgur.com/5uRJvFm.png",
@@ -179,11 +181,16 @@ projects:[
 
   
     templates:[
-
+      {
+        _id: 17,
+        name: "Data Table with Search and Sort",
+        image: "",
+        gitimage: "https://i.imgur.com/5uRJvFm.png",
+        gitHubLink: "https://github.com/88dennis/datatable-search-template-react",
+        projectInfo: "Template to display data on a table, do a search thru an input field with sort functionality",
+        projectLink: "https://88dennis.github.io/datatable-search-template-react/"
+      },
     ]
-  
-    
-     
 };
 
 export default dmsProjects;

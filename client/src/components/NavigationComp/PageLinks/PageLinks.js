@@ -31,10 +31,10 @@ const PageLinks = (props) => {
       <Link to="/">
         <div
           className={
-            (window.location.pathname ===
-            ("/" || "https://portfolio-dennis-mern-dev.herokuapp.com" || "https://portfolio-dennis-mern-dev.herokuapp.com/")
-              ? "listDiv now active item"
-              : "listDiv notnow") ||
+            // (window.location.pathname ===
+            // ("/" || "https://portfolio-dennis-mern-dev.herokuapp.com" || "https://portfolio-dennis-mern-dev.herokuapp.com/")
+            //   ? "listDiv now active item"
+            //   : "listDiv notnow") ||
             (props.currentPage === "landing"
               ? "listDiv now active item"
               : "listDiv notnow")
@@ -53,10 +53,10 @@ const PageLinks = (props) => {
       <Link to="/home">
         <div
           className={
-            (window.location.pathname ===
-            ("/home" || "https://portfolio-dennis-mern-dev.herokuapp.com/home" || "https://portfolio-dennis-mern-dev.herokuapp.com/home/")
-              ? "listDiv now active item"
-              : "listDiv notnow") ||
+            // (window.location.pathname ===
+            // ("/home" || "https://portfolio-dennis-mern-dev.herokuapp.com/home" || "https://portfolio-dennis-mern-dev.herokuapp.com/home/")
+            //   ? "listDiv now active item"
+            //   : "listDiv notnow") ||
             (props.currentPage === "home"
               ? "listDiv now active item"
               : "listDiv notnow")
@@ -74,10 +74,10 @@ const PageLinks = (props) => {
       <Link to="/about">
         <div
           className={
-            (window.location.pathname ===
-            ("/about" || "https://88dennis.github.io/portfolio-dennis-sarmiento-react-mern-dev/about" || "https://portfolio-dennis-mern-dev.herokuapp.com/about/")
-              ? "listDiv now active item"
-              : "listDiv notnow") ||
+            // (window.location.pathname ===
+            // ("/about" || "https://88dennis.github.io/portfolio-dennis-sarmiento-react-mern-dev/about" || "https://portfolio-dennis-mern-dev.herokuapp.com/about/")
+            //   ? "listDiv now active item"
+            //   : "listDiv notnow") ||
             (props.currentPage === "about"
               ? "listDiv now active item"
               : "listDiv notnow")
@@ -96,10 +96,10 @@ const PageLinks = (props) => {
       <Link to="/portfolio">
         <div
           className={
-            (window.location.pathname ===
-            ("/portfolio" || "https://portfolio-dennis-mern-dev.herokuapp.com/portfolio" || "https://portfolio-dennis-mern-dev.herokuapp.com/portfolio/")
-              ? "listDiv now active item"
-              : "listDiv notnow") ||
+            // (window.location.pathname ===
+            // ("/portfolio" || "https://portfolio-dennis-mern-dev.herokuapp.com/portfolio" || "https://portfolio-dennis-mern-dev.herokuapp.com/portfolio/")
+            //   ? "listDiv now active item"
+            //   : "listDiv notnow") ||
             (props.currentPage === "portfolio"
               ? "listDiv now active item"
               : "listDiv notnow")
@@ -119,10 +119,10 @@ const PageLinks = (props) => {
       <Link to="/contact">
         <div
           className={
-            (window.location.pathname ===
-            ("/contact" || "https://portfolio-dennis-mern-dev.herokuapp.com/contact" || "https://portfolio-dennis-mern-dev.herokuapp.com/contact/")
-              ? "listDiv now active item"
-              : "listDiv notnow") ||
+            // (window.location.pathname ===
+            // ("/contact" || "https://portfolio-dennis-mern-dev.herokuapp.com/contact" || "https://portfolio-dennis-mern-dev.herokuapp.com/contact/")
+            //   ? "listDiv now active item"
+            //   : "listDiv notnow") ||
             (props.currentPage === "contact"
               ? "listDiv now active item"
               : "listDiv notnow")

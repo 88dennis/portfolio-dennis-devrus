@@ -56,11 +56,12 @@ const NavigationComp = (props) => {
 
   if (
     currentPage === "landing" ||
-    historia.pathname === "/" ||
-    window.location.pathname ===
-      ("/" ||
-        "https://portfolio-dennis-mern-dev.herokuapp.com/" ||
-        "https://portfolio-dennis-mern-dev.herokuapp.com")
+    historia.pathname === "/" 
+    // ||
+    // window.location.pathname ===
+    //   ("/" ||
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com/" ||
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com")
   ) {
     toolBarLeftIcon = (
       <i
@@ -73,11 +74,12 @@ const NavigationComp = (props) => {
     nameOfPage = "Hello!";
   } else if (
     currentPage === "home" ||
-    historia.pathname === "/home" ||
-    window.location.pathname ===
-      ("/home" ||
-        "https://portfolio-dennis-mern-dev.herokuapp.com/home" ||
-        "https://portfolio-dennis-mern-dev.herokuapp.com/home/")
+    historia.pathname === "/home" 
+    // ||
+    // window.location.pathname ===
+    //   ("/home" ||
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com/home" ||
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com/home/")
   ) {
     toolBarLeftIcon = (
       <i
@@ -90,11 +92,12 @@ const NavigationComp = (props) => {
     nameOfPage = "Home";
   } else if (
     currentPage === "portfolio" ||
-    historia.pathname === "/portfolio" ||
-    window.location.pathname ===
-      ("/portfolio" ||
-        "https://portfolio-dennis-mern-dev.herokuapp.com/portfolio" ||
-        "https://portfolio-dennis-mern-dev.herokuapp.com/portfolio/")
+    historia.pathname === "/portfolio" 
+    // ||
+    // window.location.pathname ===
+    //   ("/portfolio" ||
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com/portfolio" ||
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com/portfolio/")
   ) {
     toolBarLeftIcon = (
       <i
@@ -107,11 +110,12 @@ const NavigationComp = (props) => {
     nameOfPage = "Portfolio";
   } else if (
     currentPage === "about" ||
-    historia.pathname === "/about" ||
-    window.location.pathname ===
-      ("/about" ||
-        "https://portfolio-dennis-mern-dev.herokuapp.com/about" ||
-        "https://portfolio-dennis-mern-dev.herokuapp.com/about/")
+    historia.pathname === "/about" 
+    // ||
+    // window.location.pathname ===
+    //   ("/about" ||
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com/about" ||
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com/about/")
   ) {
     toolBarLeftIcon = (
       <i
@@ -124,11 +128,12 @@ const NavigationComp = (props) => {
     nameOfPage = "About";
   } else if (
     currentPage === "contact" ||
-    window.location.pathname ===
-      ("/contact" ||
-        "https://portfolio-dennis-mern-dev.herokuapp.com/contact" ||
-        "https://portfolio-dennis-mern-dev.herokuapp.com/contact/") ||
-    historia.pathname === "/contact"
+    historia.pathname === "/contact" 
+    // ||
+    // window.location.pathname ===
+    //   ("/contact" ||
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com/contact" ||
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com/contact/") 
   ) {
     toolBarLeftIcon = (
       <i
