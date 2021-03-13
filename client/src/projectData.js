@@ -179,6 +179,7 @@ projects:[
 
 ],
 
+
   
     templates:[
       {
@@ -189,6 +190,15 @@ projects:[
         gitHubLink: "https://github.com/88dennis/datatable-search-template-react",
         projectInfo: "Template to display data on a table, do a search thru an input field with sort functionality",
         projectLink: "https://88dennis.github.io/datatable-search-template-react/"
+      },
+      {
+        _id: 18,
+        name: "My Navbar and Sidedrawer template",
+        image: "",
+        gitimage: "https://i.imgur.com/5uRJvFm.png",
+        gitHubLink: "https://github.com/88dennis/navbar-sidedrawer-react",
+        projectInfo: "A reusable navbar and sidedrawer using react/ react hooks and basic css",
+        projectLink: "https://88dennis.github.io/navbar-sidedrawer-react/"
       },
     ]
 };

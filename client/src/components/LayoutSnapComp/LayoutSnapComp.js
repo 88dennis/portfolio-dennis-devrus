@@ -340,7 +340,7 @@ setState(
           )}
 
           <ProjectsComp 
-          sectionName = "Templates - No templates added yet"
+          sectionName = "Templates"
           projectData={projectData ? projectData.templates : []}
           projectBtnHandler={projectBtnHandler}
           />
