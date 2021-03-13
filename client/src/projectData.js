@@ -200,15 +200,44 @@ projects:[
         projectInfo: "A reusable navbar and sidedrawer using react/ react hooks and basic css",
         projectLink: "https://88dennis.github.io/navbar-sidedrawer-react/"
       },
-      // {
-      //   _id: 19,
-      //   name: "My Navbar and Sidedrawer template",
-      //   image: "",
-      //   gitimage: "https://i.imgur.com/5uRJvFm.png",
-      //   gitHubLink: "https://github.com/88dennis/navbar-sidedrawer-react",
-      //   projectInfo: "A reusable navbar and sidedrawer using react/ react hooks and basic css",
-      //   projectLink: "",
-      // },
+      {
+        _id: 19,
+        name: "Posting Template - MERN",
+        image: "",
+        gitimage: "https://i.imgur.com/5uRJvFm.png",
+        gitHubLink: "https://github.com/88dennis/mern-post-app",
+        projectInfo: "Mern template for posting something",
+        projectLink: "https://mernpostapp2.herokuapp.com/",
+      },
+      {
+        _id: 20,
+        name: "Login Template - MERN",
+        image: "",
+        gitimage: "https://i.imgur.com/5uRJvFm.png",
+        gitHubLink: "https://github.com/88dennis/sarmsdev-logineasy",
+        projectInfo: "MERN login form using material design and crud operations",
+        projectLink: "https://sarmsdev-login-easy.herokuapp.com/",
+      },
+      {
+        _id: 21,
+        name: "Staff Info Tracker",
+        image: "",
+        gitimage: "https://i.imgur.com/5uRJvFm.png",
+        gitHubLink: "https://github.com/88dennis/sarmsdev-staff-tracker",
+        projectInfo: "MERN staff info tracker form using semantics ui and crud operations",
+        projectLink: "https://sarmsdev-staff-tracker.herokuapp.com/",
+      },
+     
+
+      {
+        _id: 22,
+        name: "Activity Tracker with Passport Auth",
+        image: "",
+        gitimage: "https://i.imgur.com/5uRJvFm.png",
+        gitHubLink: "https://github.com/88dennis/sarmsdevmernauth",
+        projectInfo: "MERN template for activity tracking, blog post. Uses passport for auth login and signup. With basic crud operations. Lets you add members and input their activities",
+        projectLink: " https://sarmsdevmernauth.herokuapp.com/",
+      },
     ]
 
 };

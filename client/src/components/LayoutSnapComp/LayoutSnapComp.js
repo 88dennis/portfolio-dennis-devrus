@@ -341,7 +341,7 @@ setState(
           )}
 
           <ProjectsComp 
-          sectionName = "Templates"
+          sectionName = "Templates | Building"
           projectData={projectData ? projectData.templates : []}
           projectBtnHandler={projectBtnHandler}
           />
