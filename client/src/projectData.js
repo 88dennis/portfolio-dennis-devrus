@@ -200,7 +200,17 @@ projects:[
         projectInfo: "A reusable navbar and sidedrawer using react/ react hooks and basic css",
         projectLink: "https://88dennis.github.io/navbar-sidedrawer-react/"
       },
+      // {
+      //   _id: 19,
+      //   name: "My Navbar and Sidedrawer template",
+      //   image: "",
+      //   gitimage: "https://i.imgur.com/5uRJvFm.png",
+      //   gitHubLink: "https://github.com/88dennis/navbar-sidedrawer-react",
+      //   projectInfo: "A reusable navbar and sidedrawer using react/ react hooks and basic css",
+      //   projectLink: "",
+      // },
     ]
+
 };
 
 export default dmsProjects;

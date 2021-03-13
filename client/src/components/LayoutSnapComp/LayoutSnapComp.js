@@ -269,7 +269,8 @@ setState(
         let codeIcon;
 
         if (state.modalShowAppInfo) {
-            appLink = <a href={state.projectModalLink} target="_blank" rel="noopener noreferrer"><button className="modalButtons appLinkBtn">Open App</button></a>
+            appLink = <a href={!state.projectModalLink ? state.projectGitHubLink : state.projectModalLink} target="_blank" rel="noopener noreferrer"><button className="modalButtons appLinkBtn">
+              {!state.projectModalLink ? "Git" : "Open App"}</button></a>
             gitLink = <a href={state.projectGitHubLink} target="_blank" rel="noopener noreferrer"><button className="buttonLinksbtn"><img className="iconsimg" src={state.projectGitimage} alt="github"></img></button></a>
 
         }

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./ProjectsComp.css";
 import logo from "../../images/DS3BLACKNOBG.png";
-
+import {useLocation, Link} from 'react-router-dom'
 import imgAlt from "../../images/DS3BLACKNOBGNOSH.png";
 const ProjectsComp = ({ sectionName, projectData, projectBtnHandler }) => {
   const [projectItems, setProjectItems] = useState([]);
   const [colors, setColors] = useState([]);
   const [mount, setMount] = useState(false);
+  let location = useLocation();
 
   let isMounted = false;
   function generateRandomColors() {
@@ -97,6 +98,71 @@ function randomColor() {
     };
   }, [mount]);
 
+  const showAnchorLink = (projectItem, index) => {
+    return  <a
+    href={projectItem.projectLink}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {projectItem.image === "no image" || projectItem.image === "" || projectItem.image === null || projectItem.image === undefined ? (
+      <div
+        style={{ backgroundColor: colors[index] }}
+        title="details"
+        className="list_icon_div"
+      >
+        <h4 style={{ margin: "0px" }}>
+          {projectItem.name[0].toUpperCase()}
+        </h4>
+      </div>
+    ) : (
+      <img
+        className="projectImg"
+        src={
+          projectItem.image === ("no image" || "")
+            ? imgAlt
+            : projectItem.image
+        }
+        alt="Logo"
+      />
+    )}
+  </a>
+  }
+
+
+
+
+  const showLinkReact = (projectItems, projectItem, index) => {
+    return  <Link
+    to={location.pathname}
+    onClick={() =>
+      projectBtnHandler(projectItems, projectItem._id)
+    }
+  >
+    {projectItem.image === "no image" || projectItem.image === "" || projectItem.image === null || projectItem.image === undefined ? (
+      <div
+        style={{ backgroundColor: colors[index] }}
+        title="details"
+        className="list_icon_div"
+      >
+        <h4 style={{ margin: "0px" }}>
+          {projectItem.name[0].toUpperCase()}
+        </h4>
+      </div>
+    ) : (
+      <img
+        className="projectImg"
+        src={
+          projectItem.image === ("no image" || "")
+            ? imgAlt
+            : projectItem.image
+        }
+        alt="Logo"
+      />
+    )}
+  </Link>
+  }
+
+
   console.log(projectItems);
   console.log(colors);
   const noProjectItems =
@@ -114,34 +180,10 @@ function randomColor() {
               >
                 <div className="container">
                   <div className="row">
-                    <div style={{ textAlign: "center" }} className="col-4">
-                      <a
-                        href={projectItem.projectLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {projectItem.image === "no image" || projectItem.image === "" || projectItem.image === null || projectItem.image === undefined ? (
-                          <div
-                            style={{ backgroundColor: colors[index] }}
-                            title="details"
-                            className="list_icon_div"
-                          >
-                            <h4 style={{ margin: "0px" }}>
-                              {projectItem.name[0].toUpperCase()}
-                            </h4>
-                          </div>
-                        ) : (
-                          <img
-                            className="projectImg"
-                            src={
-                              projectItem.image === ("no image" || "")
-                                ? imgAlt
-                                : projectItem.image
-                            }
-                            alt="Logo"
-                          />
-                        )}
-                      </a>
+                    <div  
+                    style={{ textAlign: "center" }} className="col-4">
+
+                     {!projectItem.projectLink ? showLinkReact(projectItems, projectItem): showAnchorLink(projectItem, index) }
                     </div>
                     <div className="col-6">
                       <div
