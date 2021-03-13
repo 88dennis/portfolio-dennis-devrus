@@ -23,22 +23,72 @@ const ProjectsComp = ({ sectionName, projectData, projectBtnHandler }) => {
   //   setProjectItems(projectData);
   // }, []);
 
+  function generateRandomColorsArr(numOfColorsDisplay) {
+    let arr = [];
+    for (let i = 0; i < numOfColorsDisplay; i++){
+        arr.push(randomColor());
+    }
+    // return arr;
+}
+
+// function randomColor() {
+//   let max = 256;
+//   let min = 100
+//     let r = Math.floor(Math.random() * 200);
+//     let g = Math.floor(Math.random() * 200);
+//     let b = Math.floor(Math.random() * 200);
+//     let rgbText =  "rgb(" + r + ", " + g + ", " + b + ")"
+//     return rgbText;
+// }
+
+
+function randomColor() {
+  let max = 256;
+  let min = 150
+ 
+    let r = Math.floor(Math.random() * (max - min + 1) + min);
+    let g = Math.floor(Math.random() * (max - min + 1) + min);
+    let b = Math.floor(Math.random() * (max - min + 1) + min);
+    let rgbText =  "rgb(" + r + ", " + g + ", " + b + ")"
+    return rgbText;
+}
+   //   function hasDuplicates(array) {
+      //     console.log( (new Set(array)).size !== array.length, "CHECK DUPLICATES");
+      // }
+
   useEffect(() => {
     isMounted = true;
     if (!mount) {
       setMount(true);
       if (isMounted) {
         setProjectItems(projectData);
-        function getColors() {
+        // function getColors() {
+        //   if (projectData) {
+        //     let colors = [];
+        //     for (let i = 0; i < projectData.length; i += 1) {
+        //       colors.push(generateRandomColors());
+        //     }
+        //     setColors(colors);
+        //   }
+        // }
+        // getColors();
+
+   
+        function generateRandomColorsArr() {
           if (projectData) {
-            let colors = [];
-            for (let i = 0; i < projectData.length; i += 1) {
-              colors.push(generateRandomColors());
-            }
-            setColors(colors);
+
+          let arrColors = [];
+          for (let i = 0; i < projectData.length; i++){
+            arrColors.push(randomColor());
           }
-        }
-        getColors();
+          // return arr;
+
+        
+                setColors(arrColors);
+      }
+    }
+    generateRandomColorsArr()
+
       }
     }
 
