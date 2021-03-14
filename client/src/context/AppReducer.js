@@ -233,14 +233,14 @@ const AppReducer =  (state, action) => {
 
       case "SET_PAGEXY":
 
-      console.log(action.payload)
+      // console.log(action.payload)
 
       const {
         x,
         y
       } = action.payload
 
-      console.log(x, y)
+      // console.log(x, y)
 
       let newY;
 

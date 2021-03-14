@@ -1,6 +1,5 @@
 import React from "react";
 import "./ButtonLinks.css";
-import iconHome from "../../images/cookie.png";
 import iconLinkedIn from "../../images/linkedin-icon-8.png";
 import iconGitHub from "../../images/githublogo.png";
 
@@ -24,7 +23,6 @@ const buttonLinks = (props) => (
           <a
             href="https://www.linkedin.com/in/dennissarmiento80/"
             target="_blank"
-            rel="noopener noreferrer"
           >
             <img
               className="iconsimg"
@@ -38,7 +36,6 @@ const buttonLinks = (props) => (
           <a
             href="https://github.com/88dennis"
             target="_blank"
-            rel="noopener noreferrer"
           >
             <img
               className="iconsimg"
@@ -54,7 +51,6 @@ Resume</button> */}
         <a
           href="https://drive.google.com/file/d/1nwcoWqmfs4Tmwh_Qu04DrU6GXvRNr8T4/view?usp=sharing"
           target="_blank"
-          rel="noopener noreferrer"
         >
           <button className="resumebtn">Resume</button>
         </a>

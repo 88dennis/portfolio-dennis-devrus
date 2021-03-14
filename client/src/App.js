@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {GlobalContextProvider} from './context/GlobalState';
-import { GlobalContext } from './context/GlobalState';
-import { useContext } from 'react';
+// import { GlobalContext } from './context/GlobalState';
+// import { useContext } from 'react';
 import LandingPage from './pages/LandingPage'
 import AboutMePage from './pages/AboutMePage'
 import "bootstrap-material-design/dist/css/bootstrap-material-design.css";
@@ -15,7 +15,7 @@ import ContactPage from "./pages/ContactPage";
 
 
 function App() {
-  const { user } = useContext(GlobalContext);
+  // const { user } = useContext(GlobalContext);
   return (
     <div className="App">
      <GlobalContextProvider>

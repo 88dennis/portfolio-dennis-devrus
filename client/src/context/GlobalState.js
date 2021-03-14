@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useEffect, useState } from "react";
+import React, { createContext, useReducer } from "react";
 import AppReducer from "./AppReducer";
 import axios from "axios";
 
@@ -22,12 +22,12 @@ const initialState = {
 };
 
 //use this for the cleanup function in useEffect
-let isMounted = false;
+// let isMounted = false;
 //context is to pass in data to components instead of using props
 export const GlobalContext = createContext(initialState);
 
 export const GlobalContextProvider = ({ children }) => {
-  const [mount, setMount] = useState(false);
+  // const [mount, setMount] = useState(false);
   //REDUCER - state management; sets the state using switch
   const [state, dispatch] = useReducer(AppReducer, initialState);
   const dispatcher = (type, payload) => {
@@ -69,7 +69,7 @@ export const GlobalContextProvider = ({ children }) => {
     axios
       .get("/api/user/logout")
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         dispatch({
           type: "LOGOUT_USER",
         });

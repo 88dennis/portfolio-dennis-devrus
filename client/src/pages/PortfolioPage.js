@@ -1,29 +1,42 @@
-import React, {useEffect, useContext} from 'react'
+import React, { useEffect, useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
-import LayoutSnapComp from '../components/LayoutSnapComp/LayoutSnapComp'
-import NavigationComp from '../components/NavigationComp/NavigationComp'
-import{useLocation} from 'react-router-dom';
+import LayoutSnapComp from "../components/LayoutSnapComp/LayoutSnapComp";
+import NavigationComp from "../components/NavigationComp/NavigationComp";
+import { useLocation } from "react-router-dom";
+
+let isMounted = false;
 
 const PortfolioPage = () => {
-  const { handlePageChange, currentPage } = useContext(GlobalContext);
+  const { handlePageChange } = useContext(GlobalContext);
+  const [mount, setMount] = useState(false);
 
-    let location = useLocation();
+  let location = useLocation();
 
-useEffect(()=>{
-  if(location.pathname === "/portfolio"){
-    handlePageChange("portfolio");
-  }
-},[])
+  useEffect(() => {
+    isMounted = true;
 
-    return (
-        <>
+    if (!mount) {
+      setMount(!mount);
+      if (isMounted) {
+        if (location.pathname === "/home") {
+          handlePageChange("home");
+        }
+      }
+    }
 
-<NavigationComp />
+    return () => {
+      isMounted = false;
+    };
+  }, [mount, location.pathname, handlePageChange]);
 
-            <LayoutSnapComp />
-        </>
-    )
-}
+  return (
+    <>
+      <NavigationComp />
 
-export default PortfolioPage
+      <LayoutSnapComp />
+    </>
+  );
+};
+
+export default PortfolioPage;

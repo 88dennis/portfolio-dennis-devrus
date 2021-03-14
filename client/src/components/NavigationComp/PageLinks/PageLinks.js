@@ -1,12 +1,9 @@
 import React from "react";
 import "./PageLinks.css";
 import { Link } from "react-router-dom";
-import { GlobalContext } from "../../../context/GlobalState";
-import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 
 const PageLinks = (props) => {
-  const { user } = useContext(GlobalContext);
 
   let location = useLocation();
 

@@ -1,16 +1,16 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Redirect, useLocation } from "react-router-dom";
 import logo from "../../images/DS3BLACKNOBG.png";
 import logo2 from "../../images/DS3BLACKNOBGNOSH.png";
 
 import { GlobalContext } from "../../context/GlobalState";
 import "./LandingComp.css";
-const LandingComp = () => {
 
-  const {
-    handlePageChange,
-    currentPage,
-  } = useContext(GlobalContext);
+let isMounted = false;
+const LandingComp = () => {
+  const { handlePageChange } = useContext(GlobalContext);
+  const [mount, setMount] = useState(false);
+
   let location = useLocation();
   const [state, setState] = useState({
     btnmsg: "Welcome",
@@ -22,13 +22,23 @@ const LandingComp = () => {
     isMouse: true,
   });
 
-  useEffect(()=>{
-    if(location.pathname === "/"){
-      handlePageChange("landing");
-    }
-  },[])
+  useEffect(() => {
+    isMounted = true;
 
-  
+    if (!mount) {
+      setMount(!mount);
+      if (isMounted) {
+        if (location.pathname === "/") {
+          handlePageChange("landing");
+        }
+      }
+    }
+
+    return () => {
+      isMounted = false;
+    };
+  }, [mount, location.pathname, handlePageChange]);
+
   const styles = {
     divStyle: {
       fontSize: "25px",
@@ -38,15 +48,14 @@ const LandingComp = () => {
       //   -webkit-font-smoothing: antialiased;
       //   -moz-osx-font-smoothing: grayscale;
       // color: "rgb(0, 120, 160)"
-      color: "#333"
-
+      color: "#333",
     },
 
     divStyle2: {
       fontSize: "20px",
       textAlign: "center",
       // color: "rgb(0, 120, 160)"
-      color: "#333"
+      color: "#333",
     },
   };
 
@@ -82,19 +91,19 @@ const LandingComp = () => {
     });
   };
 
-  let hideLogo = {
-    display: "flex",
-  };
-  let hideLogo2 = {
-    display: "none",
-  };
-  if (!state.showLogo) {
-    hideLogo = {
-      display: "none",
-    };
+  // let hideLogo = {
+  //   display: "flex",
+  // };
+  // let hideLogo2 = {
+  //   display: "none",
+  // };
+  // if (!state.showLogo) {
+  //   hideLogo = {
+  //     display: "none",
+  //   };
 
-    hideLogo2 = { display: "flex" };
-  }
+  //   hideLogo2 = { display: "flex" };
+  // }
 
   if (state.redirectTo) {
     return <Redirect to={{ pathname: state.redirectTo }} />;
@@ -102,62 +111,55 @@ const LandingComp = () => {
   return (
     <div className="my_main_container" onMouseMove={(e) => logMousePosition(e)}>
       <div className="my_container">
-      <div className="imgDiv">
-      <img
-        onMouseLeave={handleShowLogo}
-        onMouseEnter={handleShowLogo}
-        className="logoimghome"
-        src={!state.showLogo ? logo2 : logo}
-        alt="logo"
-      />
-
-      </div>
-  <br></br>
-  <br></br>
-
-  <br></br>
-  <br></br>
-
-      <div className="eyes">
-        <div className="eye">
-          <div className="eyeball"></div>
+        <div className="imgDiv">
+          <img
+            onMouseLeave={handleShowLogo}
+            onMouseEnter={handleShowLogo}
+            className="logoimghome"
+            src={!state.showLogo ? logo2 : logo}
+            alt="logo"
+          />
         </div>
-        <div className="eye">
-          <div className="eyeball"></div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <div className="eyes">
+          <div className="eye">
+            <div className="eyeball"></div>
+          </div>
+          <div className="eye">
+            <div className="eyeball"></div>
+          </div>
         </div>
-      </div>
-      
 
-  {/* APP DESCRIPTION STARTS */}
-            <div className="descwrap2">
-              <div style={styles.divStyle}>
-                <div>Looking for Web Designs?</div>
-              </div>
-
-              <div style={styles.divStyle2}>
-                <p>DevelopRus | Design | Development</p>
-              </div>
-              <br></br>
-            </div>
-          {/* APP DESCRIPTION ENDS */}
-      <div className="landingPageContainer">
-        <div className="lanpagewrap">
-        
-
-          <div className="loginsignupbtnhomewrap">
-            <button
-              onClick={handleClick}
-              onMouseEnter={() => setState({ btnmsg: "Go Inside!" })}
-              onMouseLeave={() => setState({ btnmsg: "Welcome!" })}
-              className="loginsignupbtnhome"
-            >
-              {state.btnmsg}
-            </button>
+        {/* APP DESCRIPTION STARTS */}
+        <div className="descwrap2">
+          <div style={styles.divStyle}>
+            <div>Looking for Web Designs?</div>
           </div>
 
-
+          <div style={styles.divStyle2}>
+            <p>DevelopRus | Design | Development</p>
+          </div>
+          <br></br>
         </div>
-      </div>
+        {/* APP DESCRIPTION ENDS */}
+        <div className="landingPageContainer">
+          <div className="lanpagewrap">
+            <div className="loginsignupbtnhomewrap">
+              <button
+                onClick={handleClick}
+                onMouseEnter={() => setState({ btnmsg: "Go Inside!" })}
+                onMouseLeave={() => setState({ btnmsg: "Welcome!" })}
+                className="loginsignupbtnhome"
+              >
+                {state.btnmsg}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

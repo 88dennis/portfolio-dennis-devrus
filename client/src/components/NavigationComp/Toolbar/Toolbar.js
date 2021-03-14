@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {Link } from "react-router-dom";
 import "./Toolbar.css";
 import DrawerToggle from "../SideDrawer/DrawerToggle";
@@ -55,7 +55,6 @@ const Toolbar = (props) => {
 
   let homeLinkText = "Home";
   let aboutLinkText = "About";
-  let landingLinkText = "Hello!";
   let contactLinkText = "Contact";
   let portfolioLinkText = "Portfolio";
 

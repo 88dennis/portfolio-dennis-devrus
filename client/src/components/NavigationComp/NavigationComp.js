@@ -1,5 +1,5 @@
-import React, { useEffect, useContext, useState } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Toolbar from "./Toolbar/Toolbar";
 import SideDrawer from "./SideDrawer/SideDrawer";
 import PageLinks from "./PageLinks/PageLinks";
@@ -15,9 +15,8 @@ import { GlobalContext } from "../../context/GlobalState";
 //     // currentPage: "Transactions",
 //   });
 // let isMounted = false;
-const NavigationComp = (props) => {
+const NavigationComp = () => {
   const {
-    user,
     logoutUser,
     handlePageChange,
     currentPage,
@@ -26,20 +25,20 @@ const NavigationComp = (props) => {
     drawerBackdropClickHandler,
   } = useContext(GlobalContext);
 
-  let history = useHistory();
   let historia = useLocation();
   let homeLinkText = "Home";
   let aboutLinkText = "About";
-  let landingLinkText = "Hello!";
+  // let landingLinkText = "Hello!";
   let contactLinkText = "Contact";
   let portfolioLinkText = "Portfolio";
   console.log(historia, "USE LOCATION");
   const iconStyle = {
     iconFont: {
       fontSize: "20px",
-      color: "white",
       paddingBottom: "5px",
       cursor: "pointer",
+      marginLeft: "10px", 
+      color: "rgb(248, 248, 248)"
     },
   };
   let sideDrawerBackdrop;
@@ -56,7 +55,7 @@ const NavigationComp = (props) => {
 
   if (
     currentPage === "landing" ||
-    historia.pathname === "/" 
+    historia.pathname === "/"
     // ||
     // window.location.pathname ===
     //   ("/" ||
@@ -68,13 +67,12 @@ const NavigationComp = (props) => {
         className="terminal icon"
         style={iconStyle.iconFont}
         onClick={() => handlePageChange("landing")}
-        style={{ marginLeft: "10px", color: "rgb(248, 248, 248)" }}
       ></i>
     );
     nameOfPage = "Hello!";
   } else if (
     currentPage === "home" ||
-    historia.pathname === "/home" 
+    historia.pathname === "/home"
     // ||
     // window.location.pathname ===
     //   ("/home" ||
@@ -86,13 +84,12 @@ const NavigationComp = (props) => {
         className="home icon"
         style={iconStyle.iconFont}
         onClick={() => handlePageChange("home")}
-        style={{ marginLeft: "10px", color: "rgb(248, 248, 248)" }}
       ></i>
     );
     nameOfPage = "Home";
   } else if (
     currentPage === "portfolio" ||
-    historia.pathname === "/portfolio" 
+    historia.pathname === "/portfolio"
     // ||
     // window.location.pathname ===
     //   ("/portfolio" ||
@@ -104,13 +101,12 @@ const NavigationComp = (props) => {
         className="code icon"
         style={iconStyle.iconFont}
         onClick={() => handlePageChange("portfolio")}
-        style={{ marginLeft: "10px", color: "rgb(248, 248, 248)" }}
       ></i>
     );
     nameOfPage = "Portfolio";
   } else if (
     currentPage === "about" ||
-    historia.pathname === "/about" 
+    historia.pathname === "/about"
     // ||
     // window.location.pathname ===
     //   ("/about" ||
@@ -122,25 +118,23 @@ const NavigationComp = (props) => {
         className="user secret icon"
         style={iconStyle.iconFont}
         onClick={() => handlePageChange("about")}
-        style={{ marginLeft: "10px", color: "rgb(248, 248, 248)" }}
       ></i>
     );
     nameOfPage = "About";
   } else if (
     currentPage === "contact" ||
-    historia.pathname === "/contact" 
+    historia.pathname === "/contact"
     // ||
     // window.location.pathname ===
     //   ("/contact" ||
     //     "https://portfolio-dennis-mern-dev.herokuapp.com/contact" ||
-    //     "https://portfolio-dennis-mern-dev.herokuapp.com/contact/") 
+    //     "https://portfolio-dennis-mern-dev.herokuapp.com/contact/")
   ) {
     toolBarLeftIcon = (
       <i
         className="address book icon"
         style={iconStyle.iconFont}
         onClick={() => handlePageChange("contact")}
-        style={{ marginLeft: "10px", color: "rgb(248, 248, 248)" }}
       ></i>
     );
     nameOfPage = "Contact";

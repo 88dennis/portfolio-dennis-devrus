@@ -1,9 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./ModalCompD.css";
 const ModalCompD = (props) => {
-  console.log(props.appLink);
-  console.log(props.gitLink, "asdasdasdadas");
 
   let appLinkButton;
   let gitLinkButton;

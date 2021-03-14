@@ -68,22 +68,18 @@ const LayoutSnapComp = () => {
           modalShowAppInfo:true
         })
         
-        // newState.modallProjectInfoShow=!newState.modallProjectInfoShow
-        console.log(id)
   
-        console.log(project.name)
       }
       
-      // console.log(project.gitimage)
      
   }
-    const modalShowHandler = () => {
+//     const modalShowHandler = () => {
       
-setState({
-  ...state,
-  modalShow:true
-});
-  }
+// setState({
+//   ...state,
+//   modalShow:true
+// });
+//   }
 
   const modalCancelHandler = () => {
 setState(
@@ -107,17 +103,17 @@ setState(
 
   // MODAL CODE ENDS
 
-  const onButtonClickToSecond = () => {
-    //  window.scrollTo(0,0)
-    if (sectionTwoRef && sectionTwoRef.current) {
-      sectionTwoRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "end",
-        // alignTo:true
-        inline: "nearest",
-      });
-    }
-  };
+  // const onButtonClickToSecond = () => {
+  //   //  window.scrollTo(0,0)
+  //   if (sectionTwoRef && sectionTwoRef.current) {
+  //     sectionTwoRef.current.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "end",
+  //       // alignTo:true
+  //       inline: "nearest",
+  //     });
+  //   }
+  // };
 
   const onButtonClickToTop = () => {
     //USING JS
@@ -141,12 +137,12 @@ setState(
 
   // const executeScroll = () => scrollToRef(myRef)
 
-  function scrollTo() {
-    var elmnt = document.getElementById("my_content2");
-    elmnt.scrollIntoView({
-      behavior: "smooth",
-    });
-  }
+  // function scrollTo() {
+  //   var elmnt = document.getElementById("my_content2");
+  //   elmnt.scrollIntoView({
+  //     behavior: "smooth",
+  //   });
+  // }
 
   // const onClickBacktoTop = () => {
   //  window.scrollTo({
@@ -167,8 +163,6 @@ setState(
 
   useEffect(() => {
     isMounted = true;
-    console.log(projectData);
-    console.log("rendering");
     let sectionElements = document.getElementsByClassName("sectionClass");
     let sectionButtons = document.getElementsByClassName("sectionButtons");
     function onScroll(e) {
@@ -245,33 +239,32 @@ setState(
       }
       isMounted = false;
     };
-  }, [mount]);
+  }, [mount, scrollTop, yRefThree, yRefTwo]);
 
   // console.log(scrollTop)
   // console.log(scrolling)
   // console.log(yRefTwo, "yRef");
   //   console.log(yRefThree, "THREE");
-  console.log(showBackToTopBtn, "yRef");
+  // console.log(showBackToTopBtn, "yRef");
 
-  function isScrolling() {
-    if (scrolling && scrollTop > 30) {
-      // setShowNav(false);
-      return true;
-    } else {
-      // setShowNav(true);
-      return false;
-    }
-  }
+  // function isScrolling() {
+  //   if (scrolling && scrollTop > 30) {
+  //     // setShowNav(false);
+  //     return true;
+  //   } else {
+  //     // setShowNav(true);
+  //     return false;
+  //   }
+  // }
 
 
   let appLink;
         let gitLink;
-        let codeIcon;
 
         if (state.modalShowAppInfo) {
-            appLink = <a href={!state.projectModalLink ? state.projectGitHubLink : state.projectModalLink} target="_blank" rel="noopener noreferrer"><button className="modalButtons appLinkBtn">
+            appLink = <a href={!state.projectModalLink ? state.projectGitHubLink : state.projectModalLink} target="_blank" rel="noreferrer"><button className="modalButtons appLinkBtn">
               {!state.projectModalLink ? "Git" : "Open App"}</button></a>
-            gitLink = <a href={state.projectGitHubLink} target="_blank" rel="noopener noreferrer"><button className="buttonLinksbtn"><img className="iconsimg" src={state.projectGitimage} alt="github"></img></button></a>
+            gitLink = <a href={state.projectGitHubLink} target="_blank" rel="noreferrer"><button className="buttonLinksbtn"><img className="iconsimg" src={state.projectGitimage} alt="github"></img></button></a>
 
         }
 

@@ -39,7 +39,6 @@ const LayoutSnapComp = () => {
 
   const onButtonClickToSecond = () => {
     //  window.scrollTo(0,0)
-    console.log(sectionTwoRef.current)
     sectionTwoRef.current.scrollIntoView({
       behavior: 'smooth',
        block: "end",

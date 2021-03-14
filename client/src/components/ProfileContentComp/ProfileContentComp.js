@@ -5,11 +5,11 @@ import Accordion from "../AccordionComp/AccordionComp";
 const ProfileContentComp = ({ handlePageChange }) => {
 
 
-  const salesforceURL = () => {
-    return (
-      <a target="_blank" href="https://trailblazer.me/id/dmsarmiento">Trailblazer</a>
-    )
-  }
+  // const salesforceURL = () => {
+  //   return (
+  //     <a target="_blank" href="https://trailblazer.me/id/dmsarmiento">Trailblazer</a>
+  //   )
+  // }
   return (
     <>
       <div className="my_card_border card mt-3 mb-2 p-4">
@@ -25,6 +25,7 @@ const ProfileContentComp = ({ handlePageChange }) => {
             <a
               target="_blank"
               href="https://drive.google.com/file/d/1QhZBQFCtF6s02nv2C6gX8yahuOIoBdQO/view"
+              rel="noreferrer"
             >
               University of Washington in Seattle
             </a>
@@ -60,7 +61,9 @@ const ProfileContentComp = ({ handlePageChange }) => {
           <article className="mb-2">
             Me, my sister and a few great Software Engineers team up to maintain
             a humble Boot Camp. Please visit us at{" "}
-            <a target="_blank" href="https://www.upliftcodecamp.com/">
+            <a target="_blank" href="https://www.upliftcodecamp.com/"
+            rel="noreferrer"
+            >
               Uplift Code Camp
             </a>
           </article>

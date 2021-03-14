@@ -1,61 +1,61 @@
 import React, { useEffect, useState } from "react";
 import "./ProjectsComp.css";
-import logo from "../../images/DS3BLACKNOBG.png";
-import {useLocation, Link} from 'react-router-dom'
+import { useLocation, Link } from "react-router-dom";
 import imgAlt from "../../images/DS3BLACKNOBGNOSH.png";
+
+let isMounted = false;
+
 const ProjectsComp = ({ sectionName, projectData, projectBtnHandler }) => {
   const [projectItems, setProjectItems] = useState([]);
   const [colors, setColors] = useState([]);
   const [mount, setMount] = useState(false);
   let location = useLocation();
 
-  let isMounted = false;
-  function generateRandomColors() {
-    // return "#" + Math.random().toString(16).substr(-6);
-    let letters = "BCDEF".split("");
-    let color = "#";
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * letters.length)];
-    }
-    return color;
-  }
+  // function generateRandomColors() {
+  //   // return "#" + Math.random().toString(16).substr(-6);
+  //   let letters = "BCDEF".split("");
+  //   let color = "#";
+  //   for (var i = 0; i < 6; i++) {
+  //     color += letters[Math.floor(Math.random() * letters.length)];
+  //   }
+  //   return color;
+  // }
 
   // useEffect(() => {
   //   setProjectItems(projectData);
   // }, []);
 
-  function generateRandomColorsArr(numOfColorsDisplay) {
-    let arr = [];
-    for (let i = 0; i < numOfColorsDisplay; i++){
-        arr.push(randomColor());
-    }
-    // return arr;
-}
+  // function generateRandomColorsArr(numOfColorsDisplay) {
+  //   let arr = [];
+  //   for (let i = 0; i < numOfColorsDisplay; i++) {
+  //     arr.push(randomColor());
+  //   }
+  //   // return arr;
+  // }
 
-// function randomColor() {
-//   let max = 256;
-//   let min = 100
-//     let r = Math.floor(Math.random() * 200);
-//     let g = Math.floor(Math.random() * 200);
-//     let b = Math.floor(Math.random() * 200);
-//     let rgbText =  "rgb(" + r + ", " + g + ", " + b + ")"
-//     return rgbText;
-// }
+  // function randomColor() {
+  //   let max = 256;
+  //   let min = 100
+  //     let r = Math.floor(Math.random() * 200);
+  //     let g = Math.floor(Math.random() * 200);
+  //     let b = Math.floor(Math.random() * 200);
+  //     let rgbText =  "rgb(" + r + ", " + g + ", " + b + ")"
+  //     return rgbText;
+  // }
 
+  function randomColor() {
+    let max = 256;
+    let min = 150;
 
-function randomColor() {
-  let max = 256;
-  let min = 150
- 
     let r = Math.floor(Math.random() * (max - min + 1) + min);
     let g = Math.floor(Math.random() * (max - min + 1) + min);
     let b = Math.floor(Math.random() * (max - min + 1) + min);
-    let rgbText =  "rgb(" + r + ", " + g + ", " + b + ")"
+    let rgbText = "rgb(" + r + ", " + g + ", " + b + ")";
     return rgbText;
-}
-   //   function hasDuplicates(array) {
-      //     console.log( (new Set(array)).size !== array.length, "CHECK DUPLICATES");
-      // }
+  }
+  //   function hasDuplicates(array) {
+  //     console.log( (new Set(array)).size !== array.length, "CHECK DUPLICATES");
+  // }
 
   useEffect(() => {
     isMounted = true;
@@ -74,97 +74,98 @@ function randomColor() {
         // }
         // getColors();
 
-   
         function generateRandomColorsArr() {
           if (projectData) {
+            let arrColors = [];
+            for (let i = 0; i < projectData.length; i++) {
+              arrColors.push(randomColor());
+            }
+            // return arr;
 
-          let arrColors = [];
-          for (let i = 0; i < projectData.length; i++){
-            arrColors.push(randomColor());
+            setColors(arrColors);
           }
-          // return arr;
-
-        
-                setColors(arrColors);
-      }
-    }
-    generateRandomColorsArr()
-
+        }
+        generateRandomColorsArr();
       }
     }
 
     return () => {
       isMounted = false;
     };
-  }, [mount]);
+  }, [mount, projectData]);
 
   const showAnchorLink = (projectItem, index) => {
-    return  <a
-    href={projectItem.projectLink}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    {projectItem.image === "no image" || projectItem.image === "" || projectItem.image === null || projectItem.image === undefined ? (
-      <div
-        style={{ backgroundColor: colors[index] }}
-        title="details"
-        className="list_icon_div"
+    console.log(projectItem, "ANCHORLINK")
+    return (
+      <a
+        href={projectItem.projectLink}
+        target="_blank"
+        rel="noreferrer"
       >
-        <h4 style={{ margin: "0px" }}>
-          {projectItem.name[0].toUpperCase()}
-        </h4>
-      </div>
-    ) : (
-      <img
-        className="projectImg"
-        src={
-          projectItem.image === ("no image" || "")
-            ? imgAlt
-            : projectItem.image
-        }
-        alt="Logo"
-      />
-    )}
-  </a>
-  }
-
-
-
+        {projectItem.image === "no image" ||
+        projectItem.image === "" ||
+        projectItem.image === null ||
+        projectItem.image === undefined ? (
+          <div
+            style={{ backgroundColor: colors[index] }}
+            title="details"
+            className="list_icon_div"
+          >
+            <h4 style={{ margin: "0px" }}>
+              {projectItem.name[0].toUpperCase()}
+            </h4>
+          </div>
+        ) : (
+          <img
+            className="projectImg"
+            src={
+              projectItem.image === ("no image" || "")
+                ? imgAlt
+                : projectItem.image
+            }
+            alt="Logo"
+          />
+        )}
+      </a>
+    );
+  };
 
   const showLinkReact = (projectItems, projectItem, index) => {
-    return  <Link
-    to={location.pathname}
-    onClick={() =>
-      projectBtnHandler(projectItems, projectItem._id)
-    }
-  >
-    {projectItem.image === "no image" || projectItem.image === "" || projectItem.image === null || projectItem.image === undefined ? (
-      <div
-        style={{ backgroundColor: colors[index] }}
-        title="details"
-        className="list_icon_div"
+    console.log(projectItem, "LINKREACT")
+
+    return (
+      <Link
+        to={location.pathname}
+        onClick={() => projectBtnHandler(projectItems, projectItem._id)}
       >
-        <h4 style={{ margin: "0px" }}>
-          {projectItem.name[0].toUpperCase()}
-        </h4>
-      </div>
-    ) : (
-      <img
-        className="projectImg"
-        src={
-          projectItem.image === ("no image" || "")
-            ? imgAlt
-            : projectItem.image
-        }
-        alt="Logo"
-      />
-    )}
-  </Link>
-  }
+        {projectItem.image === "no image" ||
+        projectItem.image === "" ||
+        projectItem.image === null ||
+        projectItem.image === undefined ? (
+          <div
+            style={{ backgroundColor: colors[index] }}
+            title="details"
+            className="list_icon_div"
+          >
+            <h4 style={{ margin: "0px" }}>
+              {projectItem.name[0].toUpperCase()}
+            </h4>
+          </div>
+        ) : (
+          <img
+            className="projectImg"
+            src={
+              projectItem.image === ("no image" || "")
+                ? imgAlt
+                : projectItem.image
+            }
+            alt="Logo"
+          />
+        )}
+      </Link>
+    );
+  };
 
-
-  console.log(projectItems);
-  console.log(colors);
   const noProjectItems =
     !projectItems || (projectItems && projectItems.length === 0);
   return (
@@ -180,10 +181,10 @@ function randomColor() {
               >
                 <div className="container">
                   <div className="row">
-                    <div  
-                    style={{ textAlign: "center" }} className="col-4">
-
-                     {!projectItem.projectLink ? showLinkReact(projectItems, projectItem): showAnchorLink(projectItem, index) }
+                    <div style={{ textAlign: "center" }} className="col-4">
+                      {!projectItem.projectLink
+                        ? showLinkReact(projectItems, projectItem, index)
+                        : showAnchorLink(projectItem, index)}
                     </div>
                     <div className="col-6">
                       <div
@@ -223,7 +224,6 @@ function randomColor() {
                   <a
                     href={projectItem.projectLink}
                     target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <img
                       className="projectImg"
