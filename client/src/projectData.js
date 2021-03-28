@@ -226,6 +226,15 @@ projects:[
         projectInfo: "Template to display data on a table, do a search thru an input field with sort functionality",
         projectLink: "https://88dennis.github.io/datatable-search-template-react/"
       },
+      {
+        _id: 182,
+        name: "Live Search with Pagination",
+        image: "",
+        gitimage: "https://i.imgur.com/5uRJvFm.png",
+        gitHubLink: "https://github.com/88dennis/live-search-pagination",
+        projectInfo: "Template for live searching with pagination and next and previous",
+        projectLink: "https://88dennis.github.io/live-search-pagination/"
+      },
       
       {
         _id: 190,
