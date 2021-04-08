@@ -58,7 +58,7 @@ const ButtonLinks = (props) => {
 Resume</button> */}
 
           <a
-            href="https://drive.google.com/file/d/1F8xbd5ECovW-Psw51l6V2b9uUZ_N8B3v/view?usp=sharing"
+            href="https://drive.google.com/file/d/1SOWGtlP6diTdTNII81kFhHLiUcZgsuJX/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
           >
